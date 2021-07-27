@@ -3,29 +3,33 @@
   if (!is_user_logged_in()) {
     echo("loggin to access this page");
 	  exit();
-   }
-
-  $current_user = wp_get_current_user();
-  $email = $current_user->user_email;
+  }
 
   //CONNEXION A LA BDD
   $serveur="localhost";
 	$utilisateur="lab0611sql3";
-	$password="1pm6STt9TE0n";
+	$password="1pm6STt9TE0n"
 	$db="lab0611sql3db";
+
+
+  
+  $current_user = wp_get_current_user();
+  $email = $current_user->user_email;
 
   require("codes snippet/GestionBdd.php");
   $bdd = new GestionBdd($serveur,$db,$utilisateur,$password);
-  $req = $bdd->getDemandesProjetByEmail($email);
+  $req = $bdd->getDemandesByEmail($email);
   
     
   ?> 
   <table>
     <thead>
 				<tr>
-					<th>Nom du projet</th>
-					<th>Noms du/des porteur(s)</th>
-					<th>Date de depôt</th>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>status</th>
+					<th>Accepter</th>
+          <th>Refuser</th>
 				</tr>
     </thead>
 				<?php
@@ -54,20 +58,20 @@
 				}
 			}
     
-  //    if(isset($_POST['accepter'])){
-  //      $bdd->accepterDemande($_POST['accepter']); 
-  //      $url = $bdd->getUrl($_POST['accepter']);
-  //      unlink($url);
- //       header('Location: http://institut-clement-ader.org/formulaire-Inscription/');
+      if(isset($_POST['accepter'])){
+        $bdd->accepterDemande($_POST['accepter']); 
+        $url = $bdd->getUrl($_POST['accepter']);
+        unlink($url);
+        header('Location: http://institut-clement-ader.org/formulaire-Inscription/');
         
- //     }
- //     if(isset($_POST['refuser'])){
- //       $url = $bdd->getUrl($_POST['refuser']);
- //       $bdd->refuserDemande($_POST['refuser']); 
- //       unlink($url);
- //       header('Location: http://institut-clement-ader.org/mes-demandes-zrr/');
+      }
+      if(isset($_POST['refuser'])){
+        $url = $bdd->getUrl($_POST['refuser']);
+        $bdd->refuserDemande($_POST['refuser']); 
+        unlink($url);
+        header('Location: http://institut-clement-ader.org/mes-demandes-zrr/');
         
-  //    }
+      }
     
     
     
