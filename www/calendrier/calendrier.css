@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    padding: 0;
+   
+
+}
+
+.calendar__table{
+    width: 100%;  
+    height: calc(100vh - 128px );
+    
+  }
+
+.calendar__table td {
+    padding: 1vh;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    width: 14.29%;
+    height: 10vmax;
+}
+.calendar__table--6weeks td {
+    height: 16.66%;
+}
+
+.calendar__weekday{
+    font-weight: bold;
+    color: black;
+    font-size: 2vh;
+}
+.calendar__day{
+  font-size: 2.1vh;  
+}
+.calendar__othermonth .calendar__day {
+    opacity: 0.3 ;
+}
+.calendar__table .calendar__event {
+    color: black;
+    cursor:pointer;
+    font-family: 'Titillium Web';
+    
+}
+
+.table {
+    width: 95%;
+    margin: 2.5%;
+    border: 1px solid #ccc;
+
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+    
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table-header {
+    background-color:#f15a23;
+    color: white;
+}
+
+h1{
+    font-family: 'Titillium Web';
+    text-align: center;
+    font-weight: bold;
+    font-size: 4em;
+
+}
+
+.calendar__event a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 1.5vh;
+}
+.form-group{
+    margin: 1vh;
+
+
+  }
+.btn-primary{
+    background-color: #f15a23;
+    border: 1px solid #f15a23;
+}
+.btn-primary:hover{
+    background-color: #f15a23; 
+    border: 1px solid #f15a23;
+
+   
+}
+.liste{
+    display: flex;
+    
+    justify-content:space-around;
+    margin: 2% 10% 0% 10%;
+    width: 80%;
+    padding-top: 10px;
+    font-size: 1.3em;
+    
+}
+ul{
+    width: 70%;
+    list-style: none;
+    margin-top: 2%;  
+    padding: 2%;
+    box-shadow: 6px 6px 3px #f15a23 ;
+    border-radius: 3%;
+    background-color: rgb(250, 250, 250);
+}
+
+.valeur {
+    border: 2px solid #f15a23;
+    background-color: white;
+    border-radius: 2%;
+    padding: 4px;
+    
+
+}
+.bouton-input {
+    background-color: white;
+    border-color: grey;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 1px;
+    margin: 2px;
+    width: 200px;
+  }
+
+
